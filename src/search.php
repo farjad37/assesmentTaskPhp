@@ -1,26 +1,26 @@
 <?php
-$outPut = '';
+$output = '';
 if (isset($argc)) {
 	for ($i = 0; $i < $argc; $i++) {
-		 //echo "Argument #" . $i . " - " . $argv[0] . "\n";
          $fileName =  $argv[1];
          $columnIndex = $argv[2];
          $valueName = $argv[3];
             $result  = [];
-            if (($handle = fopen("$fileName", "r")) !== FALSE) {                
-                while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {                    
-                if($data[$columnIndex] == "$valueName")          
-                    $outPut = implode(",", $data);
-                    echo $outPut;
+            if (($handle = fopen("$fileName", "r")) !== FALSE) {
+                
+                while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                    
+                if($data[$columnIndex] == "$valueName") 
+                    $output = implode(",", $data);
+                    echo $output;
                 }
                 fclose($handle);
-
-            
+            die;            
 	}
 }
 }
 else {
-	echo "discribe the file path";
+	echo "argc and argv disabled\n";
 }
 
 
