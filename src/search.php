@@ -20,7 +20,7 @@ if (isset($argc)) {
 }
 }
 else {
-	echo "argc and argv disabled\n";
+	echo "search and search key are not discribe\n";
 }
 
 
